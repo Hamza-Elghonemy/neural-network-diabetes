@@ -1,2 +1,4 @@
 .venv
 saved_models/
+tuner_results/
+*.pyc

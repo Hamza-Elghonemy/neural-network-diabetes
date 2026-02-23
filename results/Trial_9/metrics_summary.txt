@@ -1,0 +1,33 @@
+
+TRIAL: Trial_9
+Timestamp: 2026-02-23 21:48:09
+
+=== PERFORMANCE METRICS ===
+Test Accuracy:  0.7536
+Precision:      0.6071
+Recall:         0.7391
+F1 Score:       0.6667
+AUC-ROC:        0.8521
+
+=== CONFUSION MATRIX ===
+True Negatives:  70
+False Positives: 22
+False Negatives: 12
+True Positives:  34
+
+=== COST ANALYSIS ===
+Cost Matrix:
+  TN Cost: 0, FP Cost: 1
+  FN Cost: 5, TP Cost: 0
+
+Total Cost: 82.00
+  - False Positives Cost: 22.00
+  - False Negatives Cost: 60.00
+
+
+=== TRAINING SUMMARY ===
+Epochs Trained: 150
+Final Train Loss: 0.2163
+Final Val Loss:   0.2373
+Final Train Acc:  0.8937
+Final Val Acc:    0.9205

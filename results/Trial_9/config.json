@@ -1,0 +1,56 @@
+{
+  "architecture": {
+    "layer1": {
+      "units": 32,
+      "activation": "LeakyReLU",
+      "batch_norm": true,
+      "dropout": 0.3
+    },
+    "layer2": {
+      "units": 16,
+      "activation": "LeakyReLU",
+      "batch_norm": true,
+      "dropout": 0.2
+    },
+    "output": {
+      "units": 1,
+      "activation": "sigmoid"
+    }
+  },
+  "compilation": {
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "loss": "binary_crossentropy",
+    "metrics": [
+      "accuracy"
+    ]
+  },
+  "training": {
+    "epochs": 150,
+    "batch_size": 16,
+    "validation_split": 0.2,
+    "data_strategy": "smote_enn",
+    "callbacks": {
+      "early_stopping": {
+        "monitor": "val_loss",
+        "patience": 15,
+        "restore_best_weights": true
+      },
+      "reduce_lr": {
+        "monitor": "val_loss",
+        "factor": 0.2,
+        "patience": 5,
+        "min_lr": 0.0001
+      }
+    }
+  },
+  "features": {
+    "imputation": "KNN (k=5)",
+    "engineered": [
+      "Glucose_Insulin_Ratio",
+      "BMI_Age",
+      "Age_Group"
+    ],
+    "total_features": 11
+  }
+}

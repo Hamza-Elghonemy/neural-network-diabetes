@@ -18,6 +18,9 @@ def get_model_config(model):
             config.append(f"Dropout({rate})")
         elif layer_name == 'BatchNormalization':
             config.append("BatchNorm")
+        elif layer_name == 'LeakyReLU':
+            alpha = getattr(layer, 'negative_slope', 0.01)
+            config.append(f"LeakyReLU({alpha})")
         else:
             config.append(layer_name)
     
@@ -61,6 +64,8 @@ class TrialTracker:
             'Precision': metrics.get('precision', 0),
             'Recall': metrics.get('recall', 0),
             'F1-Score': metrics.get('f1', 0),
+            'AUC-ROC': metrics.get('auc_roc', 0),
+            'Total Cost': metrics.get('total_cost', 0),
             'Train Loss': metrics.get('train_loss', 0),
             'Val Loss': metrics.get('val_loss', 0),
             'Epochs Trained': metrics.get('epochs', 0)
@@ -86,7 +91,7 @@ class TrialTracker:
     
     def save_model(self, model, trial_name, trial_number):
         """Save model with trial information"""
-        model_filename = f"{self.models_dir}/{trial_name}_trial{trial_number}.h5"
+        model_filename = f"{self.models_dir}/{trial_name}_trial{trial_number}.keras"
         model.save(model_filename)
         print(f"✓ Model saved as '{model_filename}'")
         return model_filename
