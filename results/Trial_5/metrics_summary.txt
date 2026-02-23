@@ -1,0 +1,22 @@
+
+TRIAL: Trial_5
+Timestamp: 2026-02-23 19:04:27
+
+=== PERFORMANCE METRICS ===
+Test Accuracy:  0.7391
+Precision:      0.5862
+Recall:         0.7391
+F1 Score:       0.6538
+
+=== CONFUSION MATRIX ===
+True Negatives:  68
+False Positives: 24
+False Negatives: 12
+True Positives:  34
+
+=== TRAINING SUMMARY ===
+Epochs Trained: 46
+Final Train Loss: 0.4430
+Final Val Loss:   0.4784
+Final Train Acc:  0.7886
+Final Val Acc:    0.7545

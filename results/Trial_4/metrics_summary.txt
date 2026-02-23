@@ -1,0 +1,22 @@
+
+TRIAL: Trial_4 SMOTE
+Timestamp: 2026-02-23 19:00:34
+
+=== PERFORMANCE METRICS ===
+Test Accuracy:  0.7101
+Precision:      0.5577
+Recall:         0.6304
+F1 Score:       0.5918
+
+=== CONFUSION MATRIX ===
+True Negatives:  69
+False Positives: 23
+False Negatives: 17
+True Positives:  29
+
+=== TRAINING SUMMARY ===
+Epochs Trained: 11
+Final Train Loss: 0.4427
+Final Val Loss:   0.6180
+Final Train Acc:  0.7780
+Final Val Acc:    0.6959
