@@ -31,7 +31,7 @@ The dataset utilized is the recognized Pima Indians Diabetes Database. It incorp
 Ensure you have Python installed on your system. To set up the environment, clone this repository and install the listed dependencies:
 
 ```bash
-git clone <repository_url>
+git clone <Hamza-Elghonemy/neural-network-diabtes> 
 cd neural-network-diabetes
 pip install -r requirements.txt
 ```
